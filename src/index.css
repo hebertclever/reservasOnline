@@ -8,14 +8,13 @@
 
 body {
   max-width: 1240px;
-  margin: 0 auto; /* Isso centraliza o conteúdo */
+  margin: 0 auto; 
   display: flex;
-  flex-direction: column; /* Adicionado para alinhar o conteúdo verticalmente */
+  flex-direction: column; 
   align-items: center;
   font-family: 'Montserrat', sans-serif;
   /* font-family: 'Mulish', sans-serif; */
   padding: 0 20px;
-  margin-top: 100px;
 }
 
 img {
@@ -27,6 +26,7 @@ h4 {
   color: #333;
   font-weight: 700;
   margin-top: 10px;
+  width: 320px;
 }
 
 .icon {
@@ -35,6 +35,7 @@ h4 {
 
 .card-primeira-descricao p strong {
   margin-right: 20px;
+  width: 320px;
   font-size: 15px;
   color: #4f4f4f;
   font-weight: 700;
@@ -77,6 +78,7 @@ h4 {
 .card-primeira-descricao {
   display: flex;
   justify-content: space-between;
+  width: 320px;
 }
 
 .rating {
@@ -86,6 +88,37 @@ h4 {
 }
 
 /* CSS do Component Header */
+
+nav {
+    display: flex;
+    margin-top: 10px;
+    height: 100px;
+    align-items: center;
+}
+
+nav h1 {
+  color: #eb5757;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+input {
+    margin-left: auto;
+    height: 20px;
+}
+
+.container-logo {
+  display: flex;
+  width: 200px;
+  height: 150px;
+  align-items: center;
+}
+
+.logo {
+  color: #eb5757;
+  margin-right: 5px;
+}
 
 .countries {
   display: flex;
