@@ -26,9 +26,9 @@ function App() {
 
   return (
     <div className="App">
-      <Header setFilter={setFilter} />
-      <CardList stays={filteredStays} />
-    </div>
+    <Header setFilter={setFilter} stays={filteredStays} />
+    <CardList stays={filteredStays} />
+  </div>
   );
 }
 

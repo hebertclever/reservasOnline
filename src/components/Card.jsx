@@ -9,11 +9,11 @@ function Card({ stay }) {
     <div>
         <div className='card-primeira-descricao'>
             {stay.superHost && <p><strong>SUPER HOST</strong></p>}
-            <p>{stay.type}</p>
-            <p> {stay.type === "Entire apartment" ? `. beds ${stay.maxGuests}` : ""} </p>
+            <p className='type'>{stay.type}</p>
+            <p className='type'> {stay.type === "Entire apartment" ? `. ${stay.maxGuests} beds ` : ""} </p>
             <div className='rating'>
-                <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                <p>{stay.rating}</p>
+                <FontAwesomeIcon className='icon' icon={faStar}></FontAwesomeIcon>
+                <p className='icon'>{stay.rating}</p>
             </div>
         </div>         
         <h4>{stay.title}</h4>
