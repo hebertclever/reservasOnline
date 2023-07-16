@@ -17,7 +17,6 @@ function Header({ setFilter, stays }) {
 
   return (
     <>
-    <nav className='navbar-modal' > {showModal && <Modal />}</nav>
       <nav
         onMouseLeave={() => {
           // console.log('Mouse saiu da Header');
@@ -64,9 +63,9 @@ function Header({ setFilter, stays }) {
             <FontAwesomeIcon icon={faSearch} />
           </div>
         </div>
-
-       
+        {showModal && <Modal />}
       </nav>
+
       <div className="countries">
         <h1>{`Stays in ${uniqueCountries.join(', ')}`}</h1>
         <p>{`${stays.length} +stays`}</p>
