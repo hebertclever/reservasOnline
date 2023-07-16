@@ -8,7 +8,7 @@ function Card({ stay }) {
     <img src={stay.photo} alt={stay.title} />
     <div>
         <div className='card-primeira-descricao'>
-            {stay.superHost && <p><strong>SUPER HOST</strong></p>}
+            {stay.superHost && <div className='superHost'><p><strong>SUPER HOST</strong></p></div>  }
             <p className='type'>{stay.type}</p>
             <p className='type'> {stay.type === "Entire apartment" ? `. ${stay.maxGuests} beds ` : ""} </p>
             <div className='rating'>

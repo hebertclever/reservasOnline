@@ -1,18 +1,30 @@
-import React from 'react';
-import SearchBar from './SearchBar';
+import React, { useState } from 'react';
+import Modal from './Modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPollH } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 function Header({ setFilter, stays }) {
-  // Extrai todos os países dos dados de estadia
-  const allCountries = stays.map(stay => stay.country);
+  console.log('Renderizando componente Header');
 
-  // Cria um array de países únicos
+  const allCountries = stays.map(stay => stay.country);
+  console.log('Todos os países:', allCountries);
+
   const uniqueCountries = [...new Set(allCountries)];
+  console.log('Países únicos:', uniqueCountries);
+
+  const [showModal, setShowModal] = useState(false);
+  console.log('Estado inicial do modal:', showModal);
+
+
 
   return (
     <>
-      <nav>
+      <nav
+        onMouseLeave={() => {
+          // console.log('Mouse saiu da Header');
+          setShowModal(false);
+        }}
+      >
         <div className="container-logo">
           <FontAwesomeIcon
             className="logo"
@@ -22,11 +34,28 @@ function Header({ setFilter, stays }) {
           <h1>windbnb</h1>
         </div>
 
-        <input
+        <div className='filter-input'
+        onClick={() => {
+          // console.log('Mouse Entrou na Header');
+          setShowModal(true);
+        }}>
+        <input 
+          className='input-search'
           type="text"
-          placeholder="Search by city..."
-          onChange={event => setFilter(event.target.value)}
+          placeholder="Helsinki, Finland"
+          onChange={event => {
+            console.log('O valor do input mudou:', event.target.value);
+            setFilter(event.target.value);
+          }}
         />
+        <input className='input-number' type="number" id='quantity' placeholder='Add guests'   name='quantity' min={1} max={20} />
+        <div className='input-search-icon' > <FontAwesomeIcon icon={faSearch} /></div> 
+
+        {showModal && <Modal />}
+
+        </div>
+
+        
       </nav>
       <div className="countries">
         <h1>{`Stays in ${uniqueCountries.join(', ')}`}</h1>
