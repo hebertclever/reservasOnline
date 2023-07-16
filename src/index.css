@@ -159,11 +159,13 @@ input {
   background: none;
   border: none;
   border-right: 1px solid #82828231;
-}
-
-.filter-input input {
   height: 40px;
   padding-left: 12px;
+}
+
+input:focus,
+input:active {
+  outline: none;
 }
 
 .input-number {
@@ -185,4 +187,5 @@ input {
   align-items: center;
   justify-content: center;
   padding-left: 13px;
+  color: #eb5757;
 }
