@@ -148,6 +148,7 @@ input {
   display: flex;
   margin-left: auto;
   height: 40px;
+  width: 300px;
   padding-right: 20px;
   border-radius: 20px;
   border-radius: 16px;
@@ -160,8 +161,8 @@ input {
   border: none;
   border-right: 1px solid #82828231;
   height: 40px;
-  padding-left: 12px;
 }
+
 
 input:focus,
 input:active {
@@ -177,7 +178,7 @@ input:active {
 
 .input-search {
   width: 120px;
-  color: #312424;
+  color: #333;
   font-size: 14px;
 }
 
@@ -188,4 +189,8 @@ input:active {
   justify-content: center;
   padding-left: 13px;
   color: #eb5757;
+}
+
+.navbar-modal {
+    height: 5px;
 }
