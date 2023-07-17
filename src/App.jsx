@@ -3,8 +3,6 @@ import "./App.css";
 import Header from './components/Header';
 import CardList from './components/CardList';
 
-
-
 function App() {
   const [stays, setStays] = useState([]);
   const [filter, setFilter] = useState('');
@@ -22,7 +20,7 @@ function App() {
     fetchData();
   }, []);
 
-  const filteredStays = stays.filter(stay => stay.city.includes(filter));
+  const filteredStays = stays.filter(stay => stay.city.toLowerCase().includes(filter.toLowerCase()));
 
   return (
     <div className="App">

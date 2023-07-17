@@ -6,23 +6,21 @@ import { faPlay, faSearch } from '@fortawesome/free-solid-svg-icons';
 function Header({ setFilter, stays }) {
   console.log('Renderizando componente Header');
 
+  // Obter todos os países das estadias
   const allCountries = stays.map(stay => stay.country);
   console.log('Todos os países:', allCountries);
 
+  // Obter uma lista de países únicos
   const uniqueCountries = [...new Set(allCountries)];
   console.log('Países únicos:', uniqueCountries);
 
+  // Estado para controle do modal
   const [showModal, setShowModal] = useState(false);
   console.log('Estado inicial do modal:', showModal);
 
   return (
     <>
-      <nav
-        onMouseLeave={() => {
-          // console.log('Mouse saiu da Header');
-          setShowModal(false);
-        }}
-      >
+      <nav>
         <div className="container-logo">
           <FontAwesomeIcon
             className="logo"
@@ -32,13 +30,7 @@ function Header({ setFilter, stays }) {
           <h1>windbnb</h1>
         </div>
 
-        <div
-          className="filter-input"
-          onClick={() => {
-            // console.log('Mouse Entrou na Header');
-            setShowModal(true);
-          }}
-        >
+        <div className="filter-input">
           <input
             className="input-search"
             type="text"
@@ -51,12 +43,10 @@ function Header({ setFilter, stays }) {
           />
           <input
             className="input-number"
-            type="number"
-            id="quantity"
+            type="text"
+            id="guests"
             placeholder="Add guests"
-            name="quantity"
-            min={1}
-            max={20}
+            name="guests"
           />
           <div className="input-search-icon">
             {' '}
